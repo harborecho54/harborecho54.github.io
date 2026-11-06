@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>黄果短剧-黄果短剧热门合集_短剧在线观看与追剧清单</title>
+<meta name="description" content="黄果短剧首页，汇总热门短剧合集与追剧清单，按题材与热度浏览剧集，查看剧集简介与观看入口，快速找到想看的黄果短剧内容。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23f5a524'/%3E%3Cpath d='M24 18l24 14-24 14z' fill='%23241a0d'/%3E%3C/svg%3E">
+<style>
+:root{
+  --amber:#f5a524;
+  --amber-deep:#d9860b;
+  --ink:#241a0d;
+  --ink-soft:#4a3b26;
+  --muted:#7a6a52;
+  --paper:#fdf8ef;
+  --paper-2:#f7eedd;
+  --line:#e7d9c0;
+  --card:#ffffff;
+  --radius:16px;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+  background:var(--paper);
+  color:var(--ink);
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+img,svg{display:block;max-width:100%;}
+a{color:inherit;text-decoration:none;}
+.wrap{width:min(1120px,92vw);margin:0 auto;}
+
+/* header */
+.site-header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(253,248,239,.92);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+}
+.header-inner{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:16px;padding:12px 0;
+}
+.logo{display:flex;align-items:center;gap:10px;flex-shrink:0;}
+.logo-mark{
+  width:38px;height:38px;border-radius:11px;
+  background:linear-gradient(140deg,var(--amber),#ffc85c);
+  display:grid;place-items:center;
+  box-shadow:0 4px 12px rgba(217,134,11,.28);
+}
+.logo-mark svg{width:20px;height:20px;}
+.logo-text{
+  font-size:20px;font-weight:800;letter-spacing:.5px;color:var(--ink);
+}
+.logo-text em{font-style:normal;color:var(--amber-deep);}
+nav.main-nav{display:flex;gap:22px;font-size:15px;color:var(--ink-soft);}
+nav.main-nav a{padding:4px 2px;border-bottom:2px solid transparent;transition:.2s;}
+nav.main-nav a:hover{color:var(--amber-deep);border-color:var(--amber);}
+.header-cta{
+  font-size:14px;font-weight:700;color:#fff;
+  background:var(--ink);padding:9px 18px;border-radius:999px;
+  white-space:nowrap;transition:.2s;
+}
+.header-cta:hover{background:var(--amber-deep);}
+.nav-toggle{display:none;background:none;border:1px solid var(--line);border-radius:10px;padding:7px 10px;font-size:14px;color:var(--ink-soft);}
+
+/* hero */
+.hero{padding:56px 0 44px;position:relative;overflow:hidden;}
+.hero::before{
+  content:"";position:absolute;right:-80px;top:-60px;
+  width:420px;height:420px;border-radius:50%;
+  background:radial-gradient(circle,rgba(245,165,36,.22),transparent 68%);
+  pointer-events:none;
+}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center;}
+.kicker{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:13px;font-weight:700;letter-spacing:1px;
+  color:var(--amber-deep);background:#fff3dc;
+  border:1px solid #f6dfae;border-radius:999px;
+  padding:5px 14px;margin-bottom:18px;
+}
+h1{
+  font-size:clamp(30px,4.4vw,48px);
+  line-height:1.2;font-weight:900;letter-spacing:-.5px;
+  margin-bottom:18px;
+}
+h1 span{color:var(--amber-deep);}
+.hero-lead{font-size:16px;color:var(--ink-soft);max-width:34em;margin-bottom:26px;}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:15px;font-weight:700;border-radius:12px;
+  padding:12px 24px;transition:.2s;border:1px solid transparent;
+}
+.btn-primary{background:var(--ink);color:#fff;}
+.btn-primary:hover{background:var(--amber-deep);}
+.btn-ghost{border-color:var(--line);color:var(--ink-soft);background:#fff;}
+.btn-ghost:hover{border-color:var(--amber);color:var(--amber-deep);}
+.hero-stats{display:flex;gap:30px;margin-top:34px;flex-wrap:wrap;}
+.hero-stats div strong{display:block;font-size:22px;font-weight:900;color:var(--ink);}
+.hero-stats div span{font-size:13px;color:var(--muted);}
+
+.hero-visual{
+  background:linear-gradient(160deg,#fff6e5,#fbe7c2);
+  border:1px solid #f2ddb6;border-radius:24px;
+  padding:22px;position:relative;
+  box-shadow:0 18px 40px -22px rgba(180,120,20,.4);
+}
+.visual-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;}
+.visual-head span{font-size:13px;font-weight:700;color:var(--ink-soft);}
+.visual-head i{font-style:normal;font-size:11px;color:#fff;background:var(--amber-deep);padding:2px 9px;border-radius:999px;}
+.mini-list{display:flex;flex-direction:column;gap:10px;}
+.mini-item{
+  display:flex;align-items:center;gap:12px;
+  background:#fff;border-radius:12px;padding:10px 12px;
+  border:1px solid #f1e2c6;
+}
+.mini-thumb{
+  width:44px;height:56px;border-radius:8px;flex-shrink:0;
+  display:grid;place-items:center;color:#fff;font-size:18px;font-weight:900;
+}
+.t1{background:linear-gradient(150deg,#f5a524,#e07c0b);}
+.t2{background:linear-gradient(150deg,#6b5bd2,#3f3391);}
+.t3{background:linear-gradient(150deg,#2f9e73,#1d6b4d);}
+.mini-item b{display:block;font-size:14px;line-height:1.4;}
+.mini-item small{font-size:12px;color:var(--muted);}
+
+/* section base */
+section{padding:52px 0;}
+.sec-head{margin-bottom:28px;max-width:40em;}
+.sec-head h2{
+  font-size:clamp(22px,2.6vw,29px);font-weight:900;letter-spacing:-.3px;
+  margin-bottom:10px;
+}
+.sec-head p{font-size:15px;color:var(--muted);}
+.sec-tag{
+  font-size:12px;font-weight:800;letter-spacing:2px;
+  color:var(--amber-deep);margin-bottom:8px;
+}
+
+/* 题材导航 */
+.genre-bar{
+  display:flex;gap:10px;flex-wrap:wrap;margin-bottom:26px;
+}
+.chip{
+  font-size:14px;padding:7px 16px;border-radius:999px;
+  background:#fff;border:1px solid var(--line);color:var(--ink-soft);
+  cursor:pointer;transition:.18s;font-family:inherit;
+}
+.chip:hover{border-color:var(--amber);color:var(--amber-deep);}
+.chip.active{background:var(--ink);color:#fff;border-color:var(--ink);}
+
+/* 卡片网格 */
+.card-grid{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));
+  gap:20px;
+}
+.drama-card{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  overflow:hidden;display:flex;flex-direction:column;
+  transition:transform .2s,box-shadow .2s;
+}
+.drama-card:hover{transform:translateY(-3px);box-shadow:0 16px 30px -20px rgba(80,55,15,.45);}
+.drama-cover{
+  height:120px;display:flex;align-items:flex-end;justify-content:space-between;
+  padding:14px;color:#fff;position:relative;
+}
+.drama-cover .num{font-size:26px;font-weight:900;opacity:.9;line-height:1;}
+.drama-cover .tag{font-size:11px;background:rgba(255,255,255,.24);padding:3px 9px;border-radius:999px;backdrop-filter:blur(4px);}
+.c1{background:linear-gradient(135deg,#f5a524,#d1750a);}
+.c2{background:linear-gradient(135deg,#6b5bd2,#443a9e);}
+.c3{background:linear-gradient(135deg,#2f9e73,#1b6448);}
+.c4{background:linear-gradient(135deg,#e25c5c,#a32f2f);}
+.c5{background:linear-gradient(135deg,#3f7fd1,#254d8c);}
+.c6{background:linear-gradient(135deg,#8a6a44,#543f27);}
+.drama-body{padding:16px;display:flex;flex-direction:column;gap:8px;flex:1;}
+.drama-body h3{font-size:16px;font-weight:800;line-height:1.4;}
+.drama-body p{font-size:13.5px;color:var(--muted);flex:1;}
+.drama-meta{display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--muted);padding-top:8px;border-top:1px dashed var(--line);}
+.drama-meta a{color:var(--amber-deep);font-weight:700;}
+.drama-meta a:hover{text-decoration:underline;}
+
+/* 追剧清单 */
+.list-section{background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+.rank-list{display:flex;flex-direction:column;gap:0;background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;}
+.rank-row{
+  display:grid;grid-template-columns:44px 1fr auto;gap:14px;align-items:center;
+  padding:15px 18px;border-bottom:1px solid #f2e8d6;
+}
+.rank-row:last-child{border-bottom:none;}
+.rank-row:hover{background:#fffaef;}
+.rank-no{font-size:17px;font-weight:900;color:var(--amber-deep);}
+.rank-row b{font-size:15px;display:block;}
+.rank-row small{font-size:12.5px;color:var(--muted);}
+.rank-heat{font-size:12.5px;color:var(--ink-soft);background:#fdf1da;padding:4px 11px;border-radius:999px;white-space:nowrap;}
+
+/* 观看须知 / 内容区 */
+.two-col{display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:start;}
+.prose p{font-size:15px;color:var(--ink-soft);margin-bottom:14px;}
+.prose p strong{color:var(--ink);}
+.note-box{
+  background:#fff;border:1px solid var(--line);border-left:4px solid var(--amber);
+  border-radius:12px;padding:20px 22px;
+}
+.note-box h3{font-size:16px;font-weight:800;margin-bottom:10px;}
+.note-box ul{list-style:none;display:flex;flex-direction:column;gap:9px;}
+.note-box li{font-size:14px;color:var(--ink-soft);padding-left:18px;position:relative;}
+.note-box li::before{content:"";position:absolute;left:0;top:9px;width:7px;height:7px;border-radius:50%;background:var(--amber);}
+
+/* 搜索 */
+.search-panel{
+  background:linear-gradient(140deg,#241a0d,#3d2c14);
+  border-radius:22px;padding:34px;color:#fff;
+  display:flex;justify-content:space-between;gap:26px;align-items:center;flex-wrap:wrap;
+}
+.search-panel h2{font-size:22px;font-weight:900;margin-bottom:8px;}
+.search-panel p{font-size:14px;color:#d8c8ab;}
+.search-form{display:flex;gap:10px;flex-wrap:wrap;}
+.search-form input{
+  font-family:inherit;font-size:14px;padding:12px 16px;border-radius:12px;
+  border:1px solid #5a4626;background:#fffdf8;color:var(--ink);min-width:230px;
+}
+.search-form input:focus{outline:2px solid var(--amber);outline-offset:1px;}
+.search-form button{
+  font-family:inherit;font-size:14px;font-weight:700;padding:12px 22px;
+  border-radius:12px;border:none;background:var(--amber);color:var(--ink);cursor:pointer;transition:.2s;
+}
+.search-form button:hover{background:#ffc04a;}
+.search-hint{font-size:12.5px;color:#bda88a;margin-top:12px;width:100%;}
+
+/* 下载 */
+.download-band{
+  display:flex;justify-content:space-between;align-items:center;gap:22px;flex-wrap:wrap;
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px 26px;
+}
+.download-band .txt h3{font-size:17px;font-weight:800;margin-bottom:6px;}
+.download-band .txt p{font-size:13.5px;color:var(--muted);}
+.btn-disabled{
+  background:#e9dfcd;color:#8b7a5f;cursor:default;pointer-events:none;
+}
+
+/* footer */
+footer{
+  background:var(--ink);color:#cbb89a;padding:40px 0 28px;margin-top:20px;
+}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:32px;margin-bottom:28px;}
+footer h4{color:#fff;font-size:14px;font-weight:800;margin-bottom:12px;letter-spacing:.5px;}
+footer p{font-size:13px;line-height:1.8;}
+footer ul{list-style:none;display:flex;flex-direction:column;gap:8px;font-size:13px;}
+footer ul a:hover{color:var(--amber);}
+.footer-logo{display:flex;align-items:center;gap:9px;margin-bottom:12px;}
+.footer-logo .logo-mark{width:30px;height:30px;border-radius:9px;box-shadow:none;}
+.footer-logo span{color:#fff;font-size:16px;font-weight:800;}
+.footer-bottom{
+  border-top:1px solid #3d2f1b;padding-top:18px;
+  font-size:12.5px;color:#9c8a6e;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+}
+
+/* responsive */
+@media(max-width:900px){
+  .hero-grid,.two-col{grid-template-columns:1fr;}
+  .hero-visual{order:-1;}
+  .footer-grid{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:720px){
+  nav.main-nav{display:none;}
+  .header-cta{display:none;}
+  .nav-toggle{display:inline-block;}
+  .hero{padding:34px 0 30px;}
+  .hero-stats{gap:20px;}
+  .rank-row{grid-template-columns:34px 1fr;gap:10px;}
+  .rank-heat{grid-column:2;justify-self:start;}
+  .footer-grid{grid-template-columns:1fr;}
+  .search-panel{padding:24px;}
+  section{padding:40px 0;}
+}
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="logo" href="#top" aria-label="黄果短剧首页">
+      <span class="logo-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M8 5.5l11 6.5-11 6.5z" fill="#241a0d"/></svg>
+      </span>
+      <span class="logo-text">黄果短剧</span>
+    </a>
+    <nav class="main-nav" aria-label="主导航">
+      <a href="#genres">题材分类</a>
+      <a href="#hot">热门剧集</a>
+      <a href="#rank">追剧清单</a>
+      <a href="#guide">观看须知</a>
+    </nav>
+    <a class="header-cta" href="#search">找剧</a>
+    <button class="nav-toggle" type="button" aria-label="展开导航" onclick="document.querySelector('.main-nav').scrollIntoView({behavior:'smooth'})">导航</button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="kicker">短剧合集 · 追剧清单</span>
+        <h1>黄果短剧</h1>
+        <p class="hero-lead">黄果短剧把近期更新的短剧按题材与热度梳理成合集，每部剧附上一句话梗概、集数区间与观看入口。想找爽感强的都市线，还是偏爱悬疑反转，都可以先在这里筛一遍再决定从哪部开始。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#hot">浏览热门剧集</a>
+          <a class="btn btn-ghost" href="#rank">查看追剧清单</a>
+        </div>
+        <div class="hero-stats">
+          <div><strong>6 类</strong><span>题材分类</span></div>
+          <div><strong>18 部</strong><span>合集收录</span></div>
+          <div><strong>每周</strong><span>清单更新</span></div>
+        </div>
+      </div>
+
+      <aside class="hero-visual" aria-label="本周黄果短剧速览">
+        <div class="visual-head">
+          <span>本周速览</span>
+          <i>编辑精选</i>
+        </div>
+        <div class="mini-list">
+          <div class="mini-item">
+            <div class="mini-thumb t1">01</div>
+            <div><b>逆风翻盘的她</b><small>都市逆袭 · 已更 42 集</small></div>
+          </div>
+          <div class="mini-item">
+            <div class="mini-thumb t2">02</div>
+            <div><b>第七次回拨</b><small>悬疑反转 · 已更 28 集</small></div>
+          </div>
+          <div class="mini-item">
+            <div class="mini-thumb t3">03</div>
+            <div><b>山茶巷的春天</b><small>温情日常 · 已更 36 集</small></div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- 题材分类 -->
+  <section id="genres">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-tag">题材分类</div>
+        <h2>按口味挑黄果短剧</h2>
+        <p>短剧的节奏差别很大，先确定题材方向，再挑具体剧集会省很多时间。下面六类是目前黄果短剧收录最集中的方向，点击标签可筛选下方的热门剧集。</p>
+      </div>
+      <div class="genre-bar" role="group" aria-label="题材筛选">
+        <button class="chip active" type="button" data-genre="all">全部</button>
+        <button class="chip" type="button" data-genre="都市">都市逆袭</button>
+        <button class="chip" type="button" data-genre="悬疑">悬疑反转</button>
+        <button class="chip" type="button" data-genre="情感">情感虐恋</button>
+        <button class="chip" type="button" data-genre="古装">古装权谋</button>
+        <button class="chip" type="button" data-genre="温情">温情日常</button>
+        <button class="chip" type="button" data-genre="奇幻">奇幻设定</button>
+      </div>
+
+      <div class="card-grid" id="hot">
+        <article class="drama-card" data-genre="都市">
+          <div class="drama-cover c1"><span class="num">01</span><span class="tag">都市逆袭</span></div>
+          <div class="drama-body">
+            <h3>逆风翻盘的她</h3>
+            <p>职场新人被抢功后背水一战，靠一份被搁置的方案重新站回谈判桌。</p>
+            <div class="drama-meta"><span>已更 42 集</span><a href="#rank">加入清单</a></div>
+          </div>
+        </article>
+
+        <article class="drama-card" data-genre="悬疑">
+          <div class="drama-cover c2"><span class="num">02</span><span class="tag">悬疑反转</span></div>
+          <div class="drama-body">
+            <h3>第七次回拨</h3>
+            <p>一通打不通的电话牵出旧案，主角每次回拨都会推进一步真相。</p>
+            <div class="drama-meta"><span>已更 28 集</span><a href="#rank">加入清单</a></div>
+          </div>
+        </article>
+
+        <article class="drama-card" data-genre="温情">
+          <div class="drama-cover c3"><span class="num">03</span><span class="tag">温情日常</span></div>
+          <div class="drama-body">
+            <h3>山茶巷的春天</h3>
+            <p>老巷里三户人家的日常往来，讲的是和解与守住一间小店的故事。</p>
+            <div class="drama-meta"><span>已更 36 集</span><a href="#rank">加入清单</a></div>
+          </div>
+        </article>
+
+        <article class="drama-card" data-genre="情感">
+          <div class="drama-cover c4"><span class="num">04</span><span class="tag">情感虐恋</span></div>
+          <div class="drama-body">
+            <h3>雨停之前说再见</h3>
+            <p>分开五年后在同一场雨里重逢，旧账与新选择一起摆上台面。</p>
+            <div class="drama-meta"><span>已更 30 集</span><a href="#rank">加入清单</a></div>
+          </div>
+        </article>
+
+        <article class="drama-card" data-genre="古装">
+          <div class="drama-cover c5"><span class="num">05</span><span class="tag">古装权谋</span></div>
+          <div class="drama-body">
+            <h3>灯下棋局</h3>
+            <p>小吏被卷入朝堂暗流，每一步落子都关系到一家人的安危。</p>
+            <div class="drama-meta"><span>已更 48 集</span><a href="#rank">加入清单</a></div>
+          </div>
+        </article>
+
+        <article class="drama-card" data-genre="奇幻">
+          <div class="drama-cover c6"><span class="num">06</span><span class="tag">奇幻设定</span></div>
+          <div class="drama-body">
+            <h3>借我三天记忆</h3>
+            <p>能短暂借走他人记忆的少年，接下一桩不许说出结果的委托。</p>
+            <div class="drama-meta"><span>已更 24 集</span><a href="#rank">加入清单</a></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 追剧清单 -->
+  <section id="rank" class="list-section">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-tag">追剧清单</div>
+        <h2>黄果短剧本周追剧清单</h2>
+        <p>清单按近一周的浏览与收藏排序，顺序会随更新调整。已完结的剧集标出总集数，连载中的剧集给出当前进度，方便安排追剧节奏。</p>
+      </div>
+      <div class="rank-list">
+        <div class="rank-row">
+          <span class="rank-no">1</span>
+          <div><b>逆风翻盘的她</b><small>都市逆袭 · 连载中 · 单集约 3 分钟</small></div>
+          <span class="rank-heat">本周浏览领先</span>
+        </div>
+        <div class="rank-row">
+          <span class="rank-no">2</span>
+          <div><b>灯下棋局</b><small>古装权谋 · 连载中 · 单集约 4 分钟</small></div>
+          <span class="rank-heat">收藏增长明显</span>
+        </div>
+        <div class="rank-row">
+          <span class="rank-no">3</span>
+          <div><b>第七次回拨</b><small>悬疑反转 · 连载中 · 单集约 3 分钟</small></div>
+          <span class="rank-heat">讨论度较高</span>
+        </div>
+        <div class="rank-row">
+          <span class="rank-no">4</span>
+          <div><b>山茶巷的春天</b><small>温情日常 · 连载中 · 单集约 3 分钟</small></div>
+          <span class="rank-heat">完读率稳定</span>
+        </div>
+        <div class="rank-row">
+          <span class="rank-no">5</span>
+          <div><b>雨停之前说再见</b><small>情感虐恋 · 连载中 · 单集约 3 分钟</small></div>
+          <span class="rank-heat">新进榜单</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 观看须知 -->
+  <section id="guide">
+    <div class="wrap two-col">
+      <div class="prose">
+        <div class="sec-tag">观看须知</div>
+        <h2 style="font-size:clamp(22px,2.6vw,29px);font-weight:900;margin-bottom:16px;">看懂黄果短剧的更新与入口</h2>
+        <p><strong>集数与进度。</strong>黄果短剧收录的剧集以竖屏短剧为主，单集时长多在 3 到 4 分钟。剧集页会同时标注当前已更新的集数和总集数，未标注总集数的即为连载中，进度以页面显示为准。</p>
+        <p><strong>观看顺序。</strong>同一部剧的剧集按集号连续排列，合集页只展示前几集与梗概，完整剧集在剧集页内展开。追更时从清单点进剧集页，就能接着上次的集号继续。</p>
+        <p><strong>清单的作用。</strong>追剧清单是黄果短剧的编辑整理结果，按近一周的浏览和收藏排序，不是官方榜单，也不构成对剧集质量的评价。清单顺序会随更新调整，隔几天回来看可能已经换了一批。</p>
+        <p><strong>题材标签。</strong>每部剧只挂一个主要题材标签，避免分类交叉过多导致筛选结果混乱。如果一部剧同时具备悬疑与情感元素，会按主线情节归入更贴近的一类。</p>
+      </div>
+      <aside class="note-box">
+        <h3>使用小提示</h3>
+        <ul>
+          <li>用题材标签先筛方向，再用清单定顺序。</li>
+          <li>连载中的剧集建议攒够几集再看，节奏更连贯。</li>
+          <li>剧集梗概只写到剧情起点，不含结局信息。</li>
+          <li>清单排序每周调整一次，以页面显示为准。</li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- 搜索 -->
+  <section id="search" style="padding-top:0;">
+    <div class="wrap">
+      <div class="search-panel">
+        <div>
+          <h2>在黄果短剧里找一部剧</h2>
+          <p>输入剧名或题材关键词，结果会在下方剧集卡片中即时筛选。</p>
+        </div>
+        <form class="search-form" role="search" onsubmit="return false;">
+          <input id="searchInput" type="search" placeholder="例如：逆风、悬疑、古装" aria-label="搜索剧名或题材">
+          <button type="button" id="searchBtn">搜索</button>
+          <p class="search-hint" id="searchHint">支持按剧名与题材匹配，清空输入可恢复全部剧集。</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- 下载 -->
+  <section style="padding-top:0;">
+    <div class="wrap">
+      <div class="download-band">
+        <div class="txt">
+          <h3>黄果短剧追剧清单下载</h3>
+          <p>清单文件包含剧名、题材、当前进度与单集时长，便于离线对照安排观看顺序。</p>
+        </div>
+        <a class="btn btn-disabled" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1">下载</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">
+          <span class="logo-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M8 5.5l11 6.5-11 6.5z" fill="#241a0d"/></svg>
+          </span>
+          <span>黄果短剧</span>
+        </div>
+        <p>黄果短剧以题材分类与追剧清单组织短剧内容，提供剧集梗概、更新进度与观看入口，帮助观众快速找到想看的剧。</p>
+      </div>
+      <div>
+        <h4>站内导航</h4>
+        <ul>
+          <li><a href="#genres">题材分类</a></li>
+          <li><a href="#hot">热门剧集</a></li>
+          <li><a href="#rank">追剧清单</a></li>
+          <li><a href="#guide">观看须知</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>内容说明</h4>
+        <ul>
+          <li>剧集进度以页面显示为准</li>
+          <li>清单排序每周调整</li>
+          <li>梗概不含结局信息</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>黄果短剧 · 短剧合集与追剧清单</span>
+      <span>页面内容仅供浏览参考</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var chips = document.querySelectorAll('.chip');
+  var cards = document.querySelectorAll('.drama-card');
+  var input = document.getElementById('searchInput');
+  var btn = document.getElementById('searchBtn');
+  var hint = document.getElementById('searchHint');
+  var activeGenre = 'all';
+
+  function apply(){
+    var kw = (input.value || '').trim();
+    var shown = 0;
+    cards.forEach(function(card){
+      var g = card.getAttribute('data-genre');
+      var text = card.textContent;
+      var okGenre = (activeGenre === 'all') || (g === activeGenre);
+      var okKw = !kw || text.indexOf(kw) > -1;
+      var show = okGenre && okKw;
+      card.style.display = show ? '' : 'none';
+      if(show) shown++;
+    });
+    hint.textContent = shown === 0
+      ? '没有匹配的剧集，换个关键词或点“全部”试试。'
+      : '当前显示 ' + shown + ' 部剧集。清空输入可恢复全部。';
+  }
+
+  chips.forEach(function(chip){
+    chip.addEventListener('click', function(){
+      chips.forEach(function(c){ c.classList.remove('active'); });
+      chip.classList.add('active');
+      activeGenre = chip.getAttribute('data-genre');
+      apply();
+    });
+  });
+
+  btn.addEventListener('click', apply);
+  input.addEventListener('input', apply);
+})();
+</script>
+
+</body>
+  </html>
