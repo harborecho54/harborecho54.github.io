@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>红果短剧-红果短剧热门短剧_红果短剧免费看剧</title>
+<meta name="description" content="红果短剧首页，聚焦红果短剧平台的热门短剧内容与观看入口，呈现红果短剧的题材分类、热门榜单与看剧方式，方便观众快速找到想看的短剧。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23c81f2b'/%3E%3Ccircle cx='32' cy='27' r='11' fill='%23ffd9a8'/%3E%3Cpath d='M32 18c3 5 5 8 5 10a5 5 0 0 1-10 0c0-2 2-5 5-10z' fill='%23c81f2b'/%3E%3Crect x='20' y='42' width='24' height='5' rx='2.5' fill='%23ffd9a8'/%3E%3C/svg%3E">
+<style>
+:root{
+  --red:#c81f2b;
+  --red-deep:#8f1219;
+  --ink:#221a18;
+  --ink-soft:#5d514d;
+  --line:#eaded6;
+  --bg:#fdf7f2;
+  --card:#ffffff;
+  --gold:#e8a13a;
+  --radius:16px;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",system-ui,sans-serif;
+  background:var(--bg);
+  color:var(--ink);
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none;}
+img{max-width:100%;display:block;}
+.wrap{width:min(1120px,92vw);margin:0 auto;}
+
+/* ---------- header ---------- */
+header.site{
+  position:sticky;top:0;z-index:50;
+  background:rgba(253,247,242,.92);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.nav{
+  display:flex;align-items:center;gap:28px;
+  height:68px;
+}
+.logo{
+  display:flex;align-items:center;gap:10px;
+  font-weight:800;font-size:19px;letter-spacing:.5px;
+  color:var(--red-deep);
+  white-space:nowrap;
+}
+.logo svg{width:34px;height:34px;flex:none;}
+.nav ul{
+  display:flex;gap:22px;list-style:none;margin:0;padding:0;
+  font-size:15px;color:var(--ink-soft);
+}
+.nav ul a{padding:4px 0;border-bottom:2px solid transparent;transition:.2s;}
+.nav ul a:hover{color:var(--red);border-color:var(--red);}
+.nav .go{
+  margin-left:auto;
+  background:var(--red);color:#fff;
+  padding:9px 20px;border-radius:999px;
+  font-size:14px;font-weight:600;
+  box-shadow:0 6px 16px rgba(200,31,43,.25);
+  transition:.2s;
+}
+.nav .go:hover{background:var(--red-deep);}
+
+/* ---------- hero ---------- */
+.hero{
+  position:relative;overflow:hidden;
+  background:linear-gradient(160deg,#fff3ea 0%,#fde3d5 55%,#f9d3c8 100%);
+  border-bottom:1px solid var(--line);
+}
+.hero::after{
+  content:"";position:absolute;right:-120px;top:-120px;
+  width:420px;height:420px;border-radius:50%;
+  background:radial-gradient(circle,rgba(200,31,43,.14),transparent 70%);
+}
+.hero-inner{
+  display:grid;grid-template-columns:1.15fr .85fr;gap:40px;
+  padding:64px 0 70px;align-items:center;
+  position:relative;z-index:2;
+}
+.tag{
+  display:inline-block;font-size:13px;font-weight:600;
+  color:var(--red-deep);background:#fff;
+  border:1px solid #f3c9b9;border-radius:999px;
+  padding:4px 14px;margin-bottom:18px;
+}
+.hero h1{
+  font-size:clamp(30px,4.4vw,48px);
+  line-height:1.22;margin:0 0 16px;
+  letter-spacing:1px;font-weight:900;color:var(--red-deep);
+}
+.hero p.lead{
+  font-size:16px;color:#6b4a41;margin:0 0 26px;max-width:34em;
+}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:12px 26px;border-radius:999px;
+  font-size:15px;font-weight:600;transition:.2s;
+}
+.btn-main{background:var(--red);color:#fff;box-shadow:0 8px 20px rgba(200,31,43,.28);}
+.btn-main:hover{background:var(--red-deep);}
+.btn-ghost{background:#fff;color:var(--red-deep);border:1px solid #f0c4b4;}
+.btn-ghost:hover{border-color:var(--red);color:var(--red);}
+.btn[aria-disabled="true"]{opacity:.55;pointer-events:none;}
+
+.hero-art{
+  background:#fff;border-radius:24px;
+  padding:18px;border:1px solid #f2d4c4;
+  box-shadow:0 20px 50px rgba(150,60,40,.14);
+}
+.screen{
+  border-radius:16px;overflow:hidden;background:#2b1512;
+  aspect-ratio:16/10;display:flex;align-items:flex-end;
+  position:relative;
+}
+.screen svg{position:absolute;inset:0;width:100%;height:100%;}
+.screen .cap{
+  position:relative;z-index:2;color:#ffe9d6;
+  font-size:13px;padding:12px 14px;letter-spacing:.5px;
+  background:linear-gradient(transparent,rgba(0,0,0,.55));
+  width:100%;
+}
+.hero-art .stats{
+  display:flex;justify-content:space-between;
+  margin-top:14px;font-size:13px;color:var(--ink-soft);
+}
+.hero-art .stats b{color:var(--red);font-size:16px;display:block;line-height:1.4;}
+
+/* ---------- section base ---------- */
+section{padding:60px 0;}
+.sec-head{margin-bottom:30px;}
+.sec-head .kicker{
+  font-size:13px;font-weight:700;color:var(--red);
+  letter-spacing:2px;text-transform:uppercase;
+}
+.sec-head h2{
+  font-size:clamp(22px,2.8vw,30px);margin:8px 0 10px;
+  font-weight:800;letter-spacing:.5px;
+}
+.sec-head p{margin:0;color:var(--ink-soft);font-size:15px;max-width:46em;}
+
+/* ---------- genres ---------- */
+.genres{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+  gap:16px;
+}
+.genre{
+  background:var(--card);border:1px solid var(--line);
+  border-radius:var(--radius);padding:22px 20px;
+  transition:.22s;
+}
+.genre:hover{transform:translateY(-4px);border-color:#f0c4b4;box-shadow:0 12px 28px rgba(150,60,40,.1);}
+.genre .ico{
+  width:42px;height:42px;border-radius:12px;display:grid;place-items:center;
+  background:#fdeee6;color:var(--red);margin-bottom:14px;
+}
+.genre .ico svg{width:22px;height:22px;}
+.genre h3{font-size:17px;margin:0 0 8px;font-weight:700;}
+.genre p{font-size:14px;color:var(--ink-soft);margin:0;}
+
+/* ---------- ranking ---------- */
+.rank-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:26px;}
+.panel{
+  background:var(--card);border:1px solid var(--line);
+  border-radius:var(--radius);padding:26px;
+}
+.panel h3{font-size:18px;margin:0 0 6px;font-weight:800;}
+.panel .sub{font-size:13px;color:var(--ink-soft);margin:0 0 18px;}
+.rank-list{list-style:none;margin:0;padding:0;}
+.rank-list li{
+  display:flex;align-items:center;gap:14px;
+  padding:12px 0;border-bottom:1px dashed var(--line);
+}
+.rank-list li:last-child{border-bottom:none;}
+.rank-list .no{
+  width:26px;height:26px;flex:none;border-radius:8px;
+  display:grid;place-items:center;font-size:13px;font-weight:800;
+  background:#fbeade;color:var(--red-deep);
+}
+.rank-list li:nth-child(1) .no{background:var(--red);color:#fff;}
+.rank-list li:nth-child(2) .no{background:var(--gold);color:#fff;}
+.rank-list .t{font-size:15px;font-weight:600;}
+.rank-list .m{font-size:12.5px;color:var(--ink-soft);}
+.rank-list .tagx{
+  margin-left:auto;font-size:12px;color:var(--red-deep);
+  background:#fdeee6;border-radius:999px;padding:2px 10px;white-space:nowrap;
+}
+.detail-item{margin-bottom:20px;}
+.detail-item:last-child{margin-bottom:0;}
+.detail-item h4{font-size:15px;margin:0 0 6px;font-weight:700;color:var(--red-deep);}
+.detail-item p{font-size:14px;color:var(--ink-soft);margin:0;}
+
+/* ---------- how to watch ---------- */
+.watch{background:#fff4ec;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;margin-top:8px;}
+.step{
+  background:#fff;border-radius:var(--radius);padding:24px 22px;
+  border:1px solid #f4ddd0;position:relative;
+}
+.step .num{
+  position:absolute;top:-14px;left:22px;
+  width:30px;height:30px;border-radius:50%;
+  background:var(--red);color:#fff;font-size:14px;font-weight:800;
+  display:grid;place-items:center;box-shadow:0 6px 14px rgba(200,31,43,.28);
+}
+.step h3{font-size:16px;margin:8px 0 8px;font-weight:700;}
+.step p{font-size:14px;color:var(--ink-soft);margin:0;}
+
+/* ---------- reading ---------- */
+.article-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;}
+.prose p{font-size:15px;color:#4a3b37;margin:0 0 16px;}
+.prose p:last-child{margin-bottom:0;}
+.side-card{
+  background:var(--card);border:1px solid var(--line);
+  border-radius:var(--radius);padding:24px;
+}
+.side-card h3{font-size:16px;margin:0 0 12px;font-weight:800;}
+.side-card ul{margin:0;padding-left:18px;font-size:14px;color:var(--ink-soft);}
+.side-card li{margin-bottom:8px;}
+.side-card li:last-child{margin-bottom:0;}
+
+/* ---------- download ---------- */
+.dl{
+  margin:20px 0 0;
+  display:flex;flex-wrap:wrap;align-items:center;gap:18px;
+  background:#2b1512;color:#ffe9d6;border-radius:var(--radius);
+  padding:26px 28px;
+}
+.dl .txt{flex:1;min-width:240px;}
+.dl h3{margin:0 0 6px;font-size:18px;font-weight:800;color:#fff;}
+.dl p{margin:0;font-size:14px;color:#e7c7b7;}
+.dl .btn-main{background:var(--gold);color:#2b1512;box-shadow:none;}
+.dl .btn-main[aria-disabled="true"]{opacity:.7;}
+
+/* ---------- footer ---------- */
+footer.site{
+  border-top:1px solid var(--line);padding:36px 0 44px;
+  background:#fbf1ea;
+}
+.foot{
+  display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;
+  align-items:flex-start;font-size:13.5px;color:var(--ink-soft);
+}
+.foot .brand{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--red-deep);font-size:16px;}
+.foot .brand svg{width:28px;height:28px;}
+.foot nav{display:flex;flex-wrap:wrap;gap:16px;}
+.foot nav a:hover{color:var(--red);}
+.foot .copy{width:100%;margin-top:14px;padding-top:16px;border-top:1px dashed #ecd6c8;font-size:12.5px;color:#9a857d;}
+
+@media(max-width:860px){
+  .hero-inner{grid-template-columns:1fr;padding:44px 0 50px;gap:28px;}
+  .hero-art{order:2;}
+  .rank-grid,.article-grid{grid-template-columns:1fr;}
+  .nav ul{display:none;}
+  .nav{gap:14px;}
+  section{padding:44px 0;}
+}
+@media(max-width:520px){
+  .hero h1{letter-spacing:0;}
+  .btn{padding:11px 20px;font-size:14px;}
+  .panel,.side-card{padding:20px;}
+  .dl{padding:22px 20px;}
+}
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="logo" href="#top" aria-label="红果短剧首页">
+      <svg viewBox="0 0 64 64" aria-hidden="true">
+        <rect width="64" height="64" rx="14" fill="#c81f2b"/>
+        <circle cx="32" cy="27" r="11" fill="#ffd9a8"/>
+        <path d="M32 18c3 5 5 8 5 10a5 5 0 0 1-10 0c0-2 2-5 5-10z" fill="#c81f2b"/>
+        <rect x="20" y="42" width="24" height="5" rx="2.5" fill="#ffd9a8"/>
+      </svg>
+      红果短剧
+    </a>
+    <ul>
+      <li><a href="#genres">题材分类</a></li>
+      <li><a href="#ranking">热门榜单</a></li>
+      <li><a href="#watch">看剧方式</a></li>
+      <li><a href="#story">内容观察</a></li>
+    </ul>
+    <a class="go" href="#watch">开始看剧</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="wrap hero-inner">
+      <div>
+        <span class="tag">短剧内容首页</span>
+        <h1>红果短剧</h1>
+        <p class="lead">红果短剧是一个以竖屏短剧为主的内容平台。本页把红果短剧的题材分布、热门作品与观看入口摆在一起，帮助你在几分钟内决定下一部要追的短剧，而不是在列表里反复划动。</p>
+        <div class="hero-actions">
+          <a class="btn btn-main" href="#ranking">看热门榜单</a>
+          <a class="btn btn-ghost" href="#genres">按题材挑选</a>
+        </div>
+      </div>
+      <div class="hero-art">
+        <div class="screen">
+          <svg viewBox="0 0 400 250" aria-hidden="true" preserveAspectRatio="xMidYMid slice">
+            <defs>
+              <linearGradient id="sk" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#5b2a24"/>
+                <stop offset="1" stop-color="#2b1512"/>
+              </linearGradient>
+            </defs>
+            <rect width="400" height="250" fill="url(#sk)"/>
+            <circle cx="320" cy="58" r="34" fill="#e8a13a" opacity=".85"/>
+            <path d="M0 190 L70 140 L140 178 L210 132 L280 176 L350 138 L400 168 L400 250 L0 250 Z" fill="#7d2f28" opacity=".9"/>
+            <path d="M0 214 L80 176 L160 208 L240 168 L320 206 L400 172 L400 250 L0 250 Z" fill="#c81f2b" opacity=".55"/>
+            <rect x="150" y="96" width="100" height="60" rx="10" fill="#ffd9a8" opacity=".92"/>
+            <path d="M188 114 l30 16 -30 16 z" fill="#c81f2b"/>
+          </svg>
+          <span class="cap">竖屏短剧 · 一集几分钟，通勤路上就能看</span>
+        </div>
+        <div class="stats">
+          <span><b>竖屏</b>主要播放形式</span>
+          <span><b>多题材</b>都市 · 古装 · 悬疑</span>
+          <span><b>免费</b>观看入口</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GENRES -->
+  <section id="genres">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker">Genres</div>
+        <h2>先按题材缩小范围</h2>
+        <p>红果短剧的内容以短篇幅、强情节为特点，不同题材的叙事节奏差别明显。先确定想看的方向，再进入榜单比逐条浏览更省时间。</p>
+      </div>
+      <div class="genres">
+        <div class="genre">
+          <div class="ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><path d="M3 21h18"/><path d="M5 21V8l7-5 7 5v13"/><path d="M10 21v-6h4v6"/></svg>
+          </div>
+          <h3>都市情感</h3>
+          <p>围绕婚恋、职场与家庭关系展开，冲突集中在几集之内，适合想快速进入剧情的人。</p>
+        </div>
+        <div class="genre">
+          <div class="ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><path d="M12 3l2.4 5.6 6.1.5-4.6 4 1.4 6-5.3-3.2L6.7 19l1.4-6-4.6-4 6.1-.5z"/></svg>
+          </div>
+          <h3>古装传奇</h3>
+          <p>以架空朝代和宫宅权谋为主，服化道与场景是这类红果短剧的辨识点，节奏偏快。</p>
+        </div>
+        <div class="genre">
+          <div class="ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M16.5 16.5L21 21"/></svg>
+          </div>
+          <h3>悬疑推理</h3>
+          <p>靠线索推进和反转收尾，观看时常需要留意细节，适合喜欢边看边猜的观众。</p>
+        </div>
+        <div class="genre">
+          <div class="ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><path d="M4 5h16v11H8l-4 4z"/></svg>
+          </div>
+          <h3>轻喜日常</h3>
+          <p>以轻松对白和生活化场景为主，单集信息量不大，适合碎片时间放松观看。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RANKING -->
+  <section id="ranking" style="padding-top:0;">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker">Ranking</div>
+        <h2>热门榜单与作品看点</h2>
+        <p>榜单按红果短剧站内热度排序呈现，左侧为常见的热门类型占位，右侧说明这些作品通常因何被讨论。具体排名与片名以平台实时页面为准。</p>
+      </div>
+      <div class="rank-grid">
+        <div class="panel">
+          <h3>热度靠前的类型</h3>
+          <p class="sub">同一题材下往往有多部作品轮换上榜</p>
+          <ul class="rank-list">
+            <li><span class="no">1</span><div><div class="t">都市逆袭</div><div class="m">主角从低谷翻盘，反转密集</div></div><span class="tagx">高热度</span></li>
+            <li><span class="no">2</span><div><div class="t">古装权谋</div><div class="m">宫宅争斗与身份谜题</div></div><span class="tagx">稳定上榜</span></li>
+            <li><span class="no">3</span><div><div class="t">甜宠恋爱</div><div class="m">轻甜互动，单集节奏轻快</div></div><span class="tagx">常青</span></li>
+            <li><span class="no">4</span><div><div class="t">悬疑反转</div><div class="m">结尾翻盘，讨论度集中在结局</div></div><span class="tagx">话题高</span></li>
+            <li><span class="no">5</span><div><div class="t">家庭伦理</div><div class="m">代际矛盾与情感抉择</div></div><span class="tagx">受众广</span></li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>挑选时看这几点</h3>
+          <p class="sub">红果短剧单集时长短，判断成本也低</p>
+          <div class="detail-item">
+            <h4>先看前两集</h4>
+            <p>短剧普遍在前两集交代人物关系和主要矛盾，两集之内没有抓住你的作品，通常可以跳过。</p>
+          </div>
+          <div class="detail-item">
+            <h4>留意集数与完结状态</h4>
+            <p>已完结的作品适合一次看完，连载中的作品更适合追更，选择前先看清状态更省心。</p>
+          </div>
+          <div class="detail-item">
+            <h4>按演员与制作方筛选</h4>
+            <p>同一演员或团队常有风格接近的作品，用这一维度筛选，比单看片名更容易找到合口味的红果短剧。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WATCH -->
+  <section id="watch" class="watch">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker">How to watch</div>
+        <h2>怎么开始看红果短剧</h2>
+        <p>观看路径并不复杂，关键是先确认设备与账号状态，再进入内容页。下面三步覆盖了大多数人的实际使用过程。</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <span class="num">1</span>
+          <h3>选择观看设备</h3>
+          <p>红果短剧以竖屏为主，手机端体验最完整；平板可以横屏观看，画面更宽但仍适配竖屏比例。</p>
+        </div>
+        <div class="step">
+          <span class="num">2</span>
+          <h3>进入内容页</h3>
+          <p>从题材分类或榜单进入作品页，先读简介与集数，再决定是否从第一集开始。</p>
+        </div>
+        <div class="step">
+          <span class="num">3</span>
+          <h3>连续观看</h3>
+          <p>短剧单集短，连续播放更适合追剧情；需要暂停时收藏作品，下次可直接回到上次位置。</p>
+        </div>
+      </div>
+      <div class="dl">
+        <div class="txt">
+          <h3>下载红果短剧客户端</h3>
+          <p>安装包可离线缓存部分剧集，适合通勤与碎片时间观看。下载入口上线后将在此处提供。</p>
+        </div>
+        <a class="btn btn-main" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1">下载</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STORY -->
+  <section id="story">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker">Reading</div>
+        <h2>关于红果短剧的内容观察</h2>
+        <p>短剧不是把长剧压缩，而是按新的观看场景重新组织叙事。理解这一点，会更容易判断一部作品是否适合自己。</p>
+      </div>
+      <div class="article-grid">
+        <div class="prose">
+          <p>红果短剧的形态建立在手机竖屏之上。画面构图以上下方向为主，人物常以中近景出现，台词与表情承担了大部分信息传递。这种形式让单集时长可以压到几分钟，也决定了剧情必须在很短时间内完成铺垫、冲突与留白。</p>
+          <p>因此看短剧时，前三十秒往往就能看出作品风格：有的直接抛出矛盾，有的先立人物关系。观众不必像看长剧那样等待慢热，开场不顺可以直接换一部，试错成本很低。</p>
+          <p>题材上，红果短剧覆盖都市、古装、悬疑与轻喜等方向。题材之间的差别不只是背景设定，还包括冲突密度和情绪走向。都市题材偏现实代入，古装题材偏视觉与身份悬念，悬疑题材则把重心放在信息控制上。</p>
+          <p>对观众来说，比较有效的做法是先固定一到两个题材，再在题材内按集数、完结状态和演员筛选。这样既不会被海量列表淹没，也更容易形成自己的追剧节奏。</p>
+        </div>
+        <div class="side-card">
+          <h3>观看前可以确认的几件事</h3>
+          <ul>
+            <li>作品是否已完结，避免追到一半等待更新。</li>
+            <li>单集时长与总集数，估算完整观看所需时间。</li>
+            <li>是否支持离线缓存，影响通勤等无网络场景。</li>
+            <li>简介中的主要矛盾是否合口味，比片名更可靠。</li>
+            <li>同题材其他作品，便于看完后继续接档。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap foot">
+    <div>
+      <div class="brand">
+        <svg viewBox="0 0 64 64" aria-hidden="true">
+          <rect width="64" height="64" rx="14" fill="#c81f2b"/>
+          <circle cx="32" cy="27" r="11" fill="#ffd9a8"/>
+          <path d="M32 18c3 5 5 8 5 10a5 5 0 0 1-10 0c0-2 2-5 5-10z" fill="#c81f2b"/>
+          <rect x="20" y="42" width="24" height="5" rx="2.5" fill="#ffd9a8"/>
+        </svg>
+        红果短剧
+      </div>
+      <p style="margin:8px 0 0;max-width:26em;">以竖屏短剧为核心的内容首页，帮助观众按题材和热度找到想看的红果短剧。</p>
+    </div>
+    <nav>
+      <a href="#genres">题材分类</a>
+      <a href="#ranking">热门榜单</a>
+      <a href="#watch">看剧方式</a>
+      <a href="#story">内容观察</a>
+    </nav>
+    <div class="copy">页面内容为红果短剧主题首页介绍，具体作品、排名与功能以平台实际页面为准。</div>
+  </div>
+</footer>
+
+</body>
+</html>
